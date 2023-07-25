@@ -1,19 +1,19 @@
 import React from 'react'
-import {useQuery} from 'react-query'
 import axios from 'axios'
+import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
 
 
 const superQuery = () => {
   return axios.get('http://localhost:4000/superheroes')
 }
 export const RQSuperHeroePage = () => {
-  let refetchInt = 30000
+  // let refetchInt = 30000
   const onSuccess = () => {
     console.log('Success calling the API')
     if (results.data) {
       if (results.data.data.length === 4) {
         console.log('Stop the refecth')
-        refetchInt = false
+        // refetchInt = false
       }
     }
   }
@@ -21,8 +21,10 @@ export const RQSuperHeroePage = () => {
     console.log('Error when calling the API')
   }
 
-  const results = useQuery('super-heroes', superQuery, {refetchInterval:refetchInt,
-    onSuccess:onSuccess, onError:onError})
+  // const results = useQuery('super-heroes', superQuery, {refetchInterval:refetchInt,
+  //   onSuccess:onSuccess, onError:onError})
+  const enabled = true
+  const results = useSuperHeroesData(superQuery, onSuccess, onError, enabled)
 
   let content;
   if (results.isLoading) {

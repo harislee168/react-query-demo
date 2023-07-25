@@ -1,13 +1,20 @@
 import React from 'react'
-import {useQuery} from 'react-query'
 import axios from 'axios'
+import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
 
 const query = () => {
   return axios.get('http://localhost:4000/superheroes')
 }
 
 export const ButtonSuperHeroes = () => {
-  const results = useQuery('button-heroes', query, {enabled:false})
+  const onSuccess = () => {
+    console.log('Success calling the API')
+  }
+  const onError = () => {
+    console.log('Error when calling the API')
+  }
+  const enabled = false
+  const results = useSuperHeroesData(query, onSuccess, onError, enabled)
 
   let content;
   if (results.isLoading) {
