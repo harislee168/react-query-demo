@@ -7,6 +7,7 @@ export const NavBar = () => {
       <NavLink to='/'>Home</NavLink>
       <NavLink to='/super-heroes'>SuperHeores</NavLink>
       <NavLink to='/rq-super-heroes'>RQ SuperHeroes</NavLink>
+      <NavLink to='/button-super-heroes'>Button SuperHeroes</NavLink>
     </nav>
   )
 }
