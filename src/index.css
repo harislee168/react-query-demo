@@ -11,3 +11,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  background-color: blanchedalmond;
+  padding: 16px 32px;
+}
+
+nav a {
+  margin-right: 16px;
+  display: inline-block;
+  background-color: aliceblue;
+  border: 3px solid;
+  list-style: none;
+  padding: 3px;
+  border-radius: 5px 5px;
+}
+
+nav a.active {
+  text-decoration: none;
+  font-weight: bold
+}
+
+div.main-body {
+  padding: 20px 50px;
+  line-height: 2;
+}
+
+input.product {
+  border-radius: 25px;
+  height:30px;
+  width:300px
+}
+
+button.def {
+  border-radius: 10px;
+  height:30px;
+  width:120px;
+  margin:10px;
+  border: 2px solid purple;
+}
+
+.td-padding {
+  padding: 10px;
+}
