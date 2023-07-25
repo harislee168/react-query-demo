@@ -7,14 +7,9 @@ const query = () => {
 }
 
 export const ButtonSuperHeroes = () => {
-  const onSuccess = () => {
-    console.log('Success calling the API')
-  }
-  const onError = () => {
-    console.log('Error when calling the API')
-  }
+
   const enabled = false
-  const results = useSuperHeroesData(query, onSuccess, onError, enabled)
+  const results = useSuperHeroesData('button-heroes', query, enabled)
 
   let content;
   if (results.isLoading) {

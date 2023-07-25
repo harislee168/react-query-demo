@@ -20,5 +20,19 @@
       "name": "Hurricane",
       "alterEgo": "Don king"
     }
+  ],
+  "friends":[
+    {
+      "id":1,
+      "name":"Chandler Bing"
+    },
+    {
+      "id":2,
+      "name":"Joey Cheung"
+    },
+    {
+      "id":3,
+      "name":"Stephy Tang"
+    }
   ]
 }

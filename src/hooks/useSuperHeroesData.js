@@ -1,7 +1,7 @@
 import {useQuery} from 'react-query'
 
-export const useSuperHeroesData = (query, onSuccess, onError, enabled) => {
+export const useSuperHeroesData = (key, query, enabled=true) => {
   return (
-    useQuery('super-heroes', query, {onSuccess:onSuccess, onError:onError, enabled:enabled})
+    useQuery(key, query, {enabled:enabled})
   )
 }

@@ -8,6 +8,7 @@ export const NavBar = () => {
       <NavLink to='/super-heroes'>SuperHeores</NavLink>
       <NavLink to='/rq-super-heroes'>RQ SuperHeroes</NavLink>
       <NavLink to='/button-super-heroes'>Button SuperHeroes</NavLink>
+      <NavLink to='/parallel-queries'>Parallel Queries</NavLink>
     </nav>
   )
 }

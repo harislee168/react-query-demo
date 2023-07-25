@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
+import { Link } from 'react-router-dom'
 
 
 const superQuery = () => {
@@ -23,8 +24,7 @@ export const RQSuperHeroePage = () => {
 
   // const results = useQuery('super-heroes', superQuery, {refetchInterval:refetchInt,
   //   onSuccess:onSuccess, onError:onError})
-  const enabled = true
-  const results = useSuperHeroesData(superQuery, onSuccess, onError, enabled)
+  const results = useSuperHeroesData('super-heroes', superQuery)
 
   let content;
   if (results.isLoading) {
@@ -35,7 +35,8 @@ export const RQSuperHeroePage = () => {
       content = <div>{results.error.message}</div>
     }
     else if (results.data.data.length) {
-      content = results.data.data.map((hero) => {return <div key={hero.id}>{hero.name}</div>})
+      content = results.data.data.map((hero) => {return <div key={hero.id}>
+        <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link></div>})
     }
   }
 
