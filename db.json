@@ -34,5 +34,17 @@
       "id":3,
       "name":"Stephy Tang"
     }
+  ],
+  "users":[
+    {
+      "id":"helloworld@yahoo.com",
+      "channelId":"helloworld"
+    }
+  ],
+  "channels":[
+    {
+      "id":"helloworld",
+      "courses":["react", "vue", "angular"]
+    }
   ]
 }

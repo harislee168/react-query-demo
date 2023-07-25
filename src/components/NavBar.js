@@ -9,6 +9,8 @@ export const NavBar = () => {
       <NavLink to='/rq-super-heroes'>RQ SuperHeroes</NavLink>
       <NavLink to='/button-super-heroes'>Button SuperHeroes</NavLink>
       <NavLink to='/parallel-queries'>Parallel Queries</NavLink>
+      <NavLink to='/dynamic-queries'>Dynamic Queries</NavLink>
+      <NavLink to='/dependent-queries'>Dependent Queries</NavLink>
     </nav>
   )
 }

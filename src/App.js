@@ -8,6 +8,8 @@ import { NavBar } from './components/NavBar';
 import { ButtonSuperHeroes } from './components/ButtonSuperHeroes';
 import { RQSuperHeroPage } from './components/RQSuperHero.page';
 import { ParallelQueriesPage } from './components/ParallelQueries.page';
+import { DynamicParallelPage } from './components/DynamicParallel.page';
+import { DependentQueriesPage } from './components/DependentQueries.page';
 
 const queryClient = new QueryClient()
 
@@ -24,8 +26,10 @@ function App() {
             <Route path='super-heroes' element={<SuperHeroesPage />}></Route>
             <Route path='rq-super-heroes' element={<RQSuperHeroePage />}></Route>
             <Route path='button-super-heroes' element={<ButtonSuperHeroes />}></Route>
-            <Route path='/rq-super-heroes/:id' element={<RQSuperHeroPage />}></Route>
-            <Route path='/parallel-queries' element={<ParallelQueriesPage />}></Route>
+            <Route path='rq-super-heroes/:id' element={<RQSuperHeroPage />}></Route>
+            <Route path='parallel-queries' element={<ParallelQueriesPage />}></Route>
+            <Route path='dynamic-queries' element={<DynamicParallelPage heroIds={[1,2]}/>}></Route>
+            <Route path='dependent-queries' element={<DependentQueriesPage email='helloworld@yahoo.com'/>}></Route>
           </Routes>
         </div>
       </div>
