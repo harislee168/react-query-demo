@@ -25,5 +25,16 @@ export const useSuperHeroesTwoPage = (id) => {
 }
 
 export const useAddHero = () => {
-  return useMutation(addHeroQuery)
+  const queryClient = useQueryClient()
+  return useMutation(addHeroQuery, {
+    onSuccess: (newData) => {
+      // queryClient.invalidateQueries('super-heroes')
+      queryClient.setQueryData('super-heroes', (oldData) => {
+        return {
+          ...oldData,
+          data: [...oldData.data, newData.data]
+        }
+      })
+    }
+  })
 }

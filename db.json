@@ -24,6 +24,16 @@
       "name": "The Flash",
       "alterEgo": "Barry Allen",
       "id": 5
+    },
+    {
+      "name": "The Hulk",
+      "alterEgo": "Hulk Hogan",
+      "id": 6
+    },
+    {
+      "name": "Hercules",
+      "alterEgo": "Xena Joe",
+      "id": 7
     }
   ],
   "friends": [
