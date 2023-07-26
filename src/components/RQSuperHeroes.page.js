@@ -1,13 +1,22 @@
-import React from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import axios from 'axios'
 import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
 import { Link } from 'react-router-dom'
+import { useAddHero } from '../hooks/useSuperHeroesTwo.page'
 
 
 const superQuery = () => {
   return axios.get('http://localhost:4000/superheroes')
 }
 export const RQSuperHeroePage = () => {
+  const [name, setName] = useState('')
+  const [alterEgo, setAlterEgo] = useState('')
+  const inputRef = useRef()
+
+  useEffect(() => {
+    inputRef.current.focus()
+  },[])
+
   // let refetchInt = 30000
   const onSuccess = () => {
     console.log('Success calling the API')
@@ -39,8 +48,24 @@ export const RQSuperHeroePage = () => {
         <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link></div>})
     }
   }
+  const addHero = useAddHero()
+
+  const addHeroHandler = () => {
+    const hero = {
+      name: name,
+      alterEgo: alterEgo
+    }
+    addHero.mutate(hero)
+  }
 
   return (
-    <div>{content}</div>
+    <div>
+      <div>
+        <input type='text' ref={inputRef} value={name} onChange={(e) => {setName(e.target.value)}} className='product' placeholder='Name' />
+        <input type='text' value={alterEgo} onChange={(e) => {setAlterEgo(e.target.value)}} className='product' placeholder='Alter Ego' />
+        <button className='def' onClick={addHeroHandler}>Add Hero</button>
+      </div>
+      <div>{content}</div>
+    </div>
   )
 }

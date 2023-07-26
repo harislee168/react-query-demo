@@ -1,53 +1,62 @@
 {
   "superheroes": [
     {
-      "id":1,
+      "id": 1,
       "name": "Batman",
       "alterEgo": "Bruce Wayne"
     },
     {
-      "id":2,
+      "id": 2,
       "name": "Superman",
       "alterEgo": "Clarke Kent"
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
     },
     {
-      "id":4,
+      "id": 4,
       "name": "Hurricane",
       "alterEgo": "Don king"
-    }
-  ],
-  "friends":[
-    {
-      "id":1,
-      "name":"Chandler Bing"
     },
     {
-      "id":2,
-      "name":"Joey Cheung"
+      "name": "The Flash",
+      "alterEgo": "Barry Allen",
+      "id": 5
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Chandler Bing"
     },
     {
-      "id":3,
-      "name":"Stephy Tang"
-    }
-  ],
-  "users":[
+      "id": 2,
+      "name": "Joey Cheung"
+    },
     {
-      "id":"helloworld@yahoo.com",
-      "channelId":"helloworld"
+      "id": 3,
+      "name": "Stephy Tang"
     }
   ],
-  "channels":[
+  "users": [
     {
-      "id":"helloworld",
-      "courses":["react", "vue", "angular"]
+      "id": "helloworld@yahoo.com",
+      "channelId": "helloworld"
     }
   ],
-  "colors":[
+  "channels": [
+    {
+      "id": "helloworld",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    }
+  ],
+  "colors": [
     {
       "id": 1,
       "color": "red"

@@ -1,4 +1,4 @@
-import {useQuery, useQueryClient} from 'react-query'
+import {useQuery, useQueryClient, useMutation} from 'react-query'
 import axios from 'axios'
 
 const query = ({queryKey}) => {
@@ -6,9 +6,13 @@ const query = ({queryKey}) => {
   return axios.get(`http://localhost:4000/superheroes/${id}`)
 }
 
+const addHeroQuery = (hero) => {
+  return axios.post('http://localhost:4000/superheroes', hero)
+}
+
 export const useSuperHeroesTwoPage = (id) => {
   const queryClient = useQueryClient()
-  return useQuery('super-hero', query, {
+  return useQuery(['super-hero', id], query, {
     initialData: () => {
       const result = queryClient.getQueryData('super-heroes')?.data?.find((hero) => {return hero.id === parseInt(id)})
       if (result) {
@@ -18,4 +22,8 @@ export const useSuperHeroesTwoPage = (id) => {
       }
     }
   })
+}
+
+export const useAddHero = () => {
+  return useMutation(addHeroQuery)
 }
