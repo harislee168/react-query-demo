@@ -1,4 +1,5 @@
 import {useQuery, useQueryClient, useMutation} from 'react-query'
+import { request } from '../utils/axios-utils'
 import axios from 'axios'
 
 const query = ({queryKey}) => {
@@ -7,7 +8,8 @@ const query = ({queryKey}) => {
 }
 
 const addHeroQuery = (hero) => {
-  return axios.post('http://localhost:4000/superheroes', hero)
+  // return axios.post('http://localhost:4000/superheroes', hero)
+  return request({url:'/superheroes', method:'post', data:hero})
 }
 
 export const useSuperHeroesTwoPage = (id) => {

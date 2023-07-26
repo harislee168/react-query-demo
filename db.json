@@ -34,6 +34,11 @@
       "name": "Hercules",
       "alterEgo": "Xena Joe",
       "id": 7
+    },
+    {
+      "name": "Bruce Lee",
+      "alterEgo": "Chinese Kungfu",
+      "id": 8
     }
   ],
   "friends": [

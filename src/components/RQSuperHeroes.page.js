@@ -1,12 +1,14 @@
 import React, {useState, useRef, useEffect} from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
 import { Link } from 'react-router-dom'
 import { useAddHero } from '../hooks/useSuperHeroesTwo.page'
+import { request } from '../utils/axios-utils'
 
 
 const superQuery = () => {
-  return axios.get('http://localhost:4000/superheroes')
+  // return axios.get('http://localhost:4000/superheroes')
+  return request({url:'/superheroes'})
 }
 export const RQSuperHeroePage = () => {
   const [name, setName] = useState('')
