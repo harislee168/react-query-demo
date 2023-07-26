@@ -1,16 +1,13 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import { useSuperHeroesData } from '../hooks/useSuperHeroesData'
+import { useSuperHeroesTwoPage } from '../hooks/useSuperHeroesTwo.page'
+
 
 export const RQSuperHeroPage = () => {
   const {id} = useParams()
 
-  const query = () => {
-    return axios.get(`http://localhost:4000/superheroes/${id}`)
-  }
-
-  const results = useSuperHeroesData(`individual-hero-${id}`, query)
+  const results = useSuperHeroesTwoPage(id)
   let content
   if (results.isLoading) {
     content = <div>Loading ...</div>

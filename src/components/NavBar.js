@@ -11,6 +11,7 @@ export const NavBar = () => {
       <NavLink to='/parallel-queries'>Parallel Queries</NavLink>
       <NavLink to='/dynamic-queries'>Dynamic Queries</NavLink>
       <NavLink to='/dependent-queries'>Dependent Queries</NavLink>
+      <NavLink to='/color-queries'>Color Queries</NavLink>
     </nav>
   )
 }
