@@ -11,6 +11,7 @@ import { ParallelQueriesPage } from './components/ParallelQueries.page';
 import { DynamicParallelPage } from './components/DynamicParallel.page';
 import { DependentQueriesPage } from './components/DependentQueries.page';
 import { PaginatedPage } from './components/Paginated.page';
+import { InifniteQueriesPage } from './components/InifniteQueries.page';
 
 const queryClient = new QueryClient()
 
@@ -32,6 +33,7 @@ function App() {
             <Route path='dynamic-queries' element={<DynamicParallelPage heroIds={[1,2]}/>}></Route>
             <Route path='dependent-queries' element={<DependentQueriesPage email='helloworld@yahoo.com'/>}></Route>
             <Route path='color-queries' element={<PaginatedPage />}></Route>
+            <Route path='infinite-queries' element={<InifniteQueriesPage />}></Route>
           </Routes>
         </div>
       </div>
